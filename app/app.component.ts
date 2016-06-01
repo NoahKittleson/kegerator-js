@@ -1,11 +1,18 @@
 import { Component } from 'angular2/core';
 import { Keg } from './keg.model';
+import { KegListComponent } from './keg-list.component';
 
 @Component ({
   selector: 'my-app',
-  directives: [],
+  directives: [KegListComponent],
   template: `
-    <h1 *ngFor="#keg of kegs"> {{ keg.name }} {{ keg.type }} {{ keg.ABV }} </h1>
+  <div class="container">
+  <h1>Your Kegs</h1>
+    <keg-list
+      [kegList] = "kegs">
+    </keg-list>
+  </div>
+
   `
 })
 
