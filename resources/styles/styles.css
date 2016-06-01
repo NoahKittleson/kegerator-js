@@ -2,10 +2,15 @@ body {
   font-family: 'Cinzel', serif;
   font-weight: 800;
   background: url("/././resources/images/background.png");
+  color:  #005252;
+}
+
+h1, h2, h3 {
+    color: #0D184F;
 }
 
 .selected {
-  color: #f00e46;
+  color: #0D184F;
 }
 
 p {
