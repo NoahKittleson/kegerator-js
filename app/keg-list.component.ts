@@ -28,7 +28,8 @@ export class KegListComponent {
   kegClicked(clickedKeg : Keg) {
     this.selectedKeg = clickedKeg;
     this.onKegSelect.emit(clickedKeg);
-  }
+    this.selectedKeg
+}
   addKeg(newKeg : Keg) {
     newKeg.id = this.kegList.length;
     this.kegList.push(newKeg);
