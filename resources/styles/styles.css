@@ -1,5 +1,7 @@
 body {
-font-family: 'Cinzel', serif;
+  font-family: 'Cinzel', serif;
+  font-weight: 800;
+  background: url("/././resources/images/background.png");
 }
 
 .selected {
