@@ -1,3 +1,53 @@
+body {
+font-family: 'Cinzel', serif;
+}
+
 .selected {
   color: #f00e46;
+}
+
+p {
+  margin-left: 35px;
+  font-size: 16px;
+}
+
+label {
+  font-size: 20px;
+}
+
+.fuckin-barrel {
+  height: 100px;
+}
+
+.left {
+  float: left;
+}
+
+#overwrite {
+  border-radius: 15px;
+  margin-bottom: 25px;
+  height: 100px;
+  width: 150px;
+  color: white;
+  background-color: green;
+  font-size: 18px;
+}
+
+input {
+  margin: 10px;
+}
+
+#adjust {
+  margin-top: 9px;
+  background-color: green;
+}
+
+#soccer-kablooie {
+  height: 100px;
+  width: 150px;
+  border-radius: 15px;
+  margin-bottom: 9px;
+}
+.right {
+  float: right;
 }
