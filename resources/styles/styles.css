@@ -58,3 +58,7 @@ input {
 .right {
   float: right;
 }
+
+.sabotage {
+  color: red;
+}
