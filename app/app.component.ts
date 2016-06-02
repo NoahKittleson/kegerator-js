@@ -21,7 +21,12 @@ export class AppComponent {
   constructor() {
     this.kegs = [
       new Keg("Tricerahops", "IPA", "5.6%", 0),
-      new Keg("Marionberry", "Cider", "6.5%", 1)
+      new Keg("Marionberry", "Cider", "6.5%", 1),
+      new Keg("Dead Guy", "Ale", "7.9%", 2),
+      new Keg("Arrogant Bastard", "Stout", "9.9%", 3),
+      new Keg("Kraken", "Red", "6.7%", 4),
+      new Keg("Hoppy Little Accident", "IPA", "5.3%", 5),
+      new Keg("Blood Orange", "Wheat", "4.4%", 6),
     ];
   }
 }
