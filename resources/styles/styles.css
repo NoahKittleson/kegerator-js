@@ -24,12 +24,16 @@ label {
 
 .fuckin-barrel {
   height: 100px;
+  margin-left: 25px;
 }
 
 .left {
-  float: left;
+  margin-left: 0;
 }
 
+.container-large {
+  max-width: 100%;
+}
 #overwrite {
   border-radius: 15px;
   margin-bottom: 25px;
@@ -47,6 +51,11 @@ label {
   background-color: green;
   width: 190px;
   color: white;
+}
+
+.beer {
+  float:left;
+  height: 100px;
 }
 
 input {
