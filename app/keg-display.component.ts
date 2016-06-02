@@ -15,14 +15,28 @@ import { Keg } from './keg.model';
       <div class="col-md-4">
         <label (click) = "toggleShow()">{{ keg.name }} {{ keg.type }} {{ keg.ABV }}</label>
         <div *ngIf="show === true">
-          <p>Pints Left in Keg: {{ keg.pints }}</p> 
+          <p>Pints Left in Keg: {{ keg.pints }}</p>
           <p>Keg Empty? {{ keg.empty }}</p>
         </div>
       </div>
+
       <div class="col-md-2">
-        <span *ngIf="keg.empty === false"><button (click)="takePint()" id="overwrite">TAKE PINT</button></span>
-        <span *ngIf="keg.empty === true"><img id ="soccer-kablooie" src="././resources/images/kablooie.jpg"></span>
+        <span *ngIf="keg.pints >= .5"><button (click)="takePint(.5)" id="overwrite">POUR GLASS</button></span>
+        <span *ngIf="keg.pints === 0"><img id ="soccer-kablooie" src="././resources/images/kablooie.jpg"></span>
       </div>
+
+      <div class="col-md-2">
+        <span *ngIf="keg.pints >= 1"><button (click)="takePint(1)" id="overwrite">POUR PINT</button></span>
+        <span *ngIf="keg.pints === .5"><img src="././resources/images/skull.jpg" id="skull"></span>
+        <span *ngIf="keg.pints === 0"><img id ="soccer-kablooie" src="././resources/images/kablooie.jpg"></span>
+      </div>
+
+      <div class="col-md-2">
+        <span *ngIf="keg.pints >= 3"><button (click)="takePint(3)" id="overwrite">POUR PITCHER</button></span>
+        <span *ngIf="keg.pints < 3 && keg.pints > 0"><img src="././resources/images/skull.jpg" id="skull"></span>
+        <span *ngIf="keg.pints === 0"><img id ="soccer-kablooie" src="././resources/images/kablooie.jpg"></span>
+      </div>
+
     </div>
   `
 })
@@ -32,13 +46,15 @@ export class KegDisplayComponent {
   toggleShow() {
     this.show = !this.show;
   }
-  takePint() {
+  takePint(numberOfPints: number) {
     if(this.keg.pints === 0) {
       this.keg.empty = true;
     } else {
-      this.keg.pints -= 1;
+      this.keg.pints -= numberOfPints;
     }
   }
+
+
   kegLeft() {
     if(this.keg.pints > 93) {
       return 4;
