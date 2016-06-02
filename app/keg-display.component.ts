@@ -1,9 +1,11 @@
 import { Component } from 'angular2/core';
+import { EditKegComponent } from './edit-keg.component'
 import { Keg } from './keg.model';
 
 @Component ({
   selector: 'keg-display',
   inputs: ['keg'],
+  directives: [EditKegComponent],
   template: `
     <div class="container">
       <div class="col-md-2">
@@ -12,11 +14,18 @@ import { Keg } from './keg.model';
         <span *ngIf="kegLeft() === 2"><img src="././resources/images/half.png" class="fuckin-barrel"></span>
         <span *ngIf="kegLeft() === 1"><img src="././resources/images/quarter.png" class="fuckin-barrel"></span>
       </div>
+
       <div class="col-md-4">
-        <label (click) = "toggleShow()">{{ keg.name }} {{ keg.type }} {{ keg.ABV }}</label>
-        <div *ngIf="show === true">
-          <p>Pints Left in Keg: {{ keg.pints }}</p>
-          <p>Keg Empty? {{ keg.empty }}</p>
+        <div *ngIf="keg.pints > 0">
+          <label (click) = "toggleShow()">{{ keg.name }} {{ keg.type }} {{ keg.ABV }}</label>
+          <div *ngIf="show === true">
+            <p>Pints Left in Keg: {{ keg.pints }}</p>
+            <p>Keg Empty? {{ keg.empty }}</p>
+          </div>
+        </div>
+        <div *ngIf="keg.pints === 0">
+          <edit-keg [keg]="keg">
+          </edit-keg>
         </div>
       </div>
 
@@ -47,10 +56,9 @@ export class KegDisplayComponent {
     this.show = !this.show;
   }
   takePint(numberOfPints: number) {
+    this.keg.pints -= numberOfPints;
     if(this.keg.pints === 0) {
       this.keg.empty = true;
-    } else {
-      this.keg.pints -= numberOfPints;
     }
   }
 

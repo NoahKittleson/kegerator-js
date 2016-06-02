@@ -40,6 +40,14 @@ label {
   font-size: 18px;
 }
 
+#replace {
+  border-radius: 15px;
+  margin-left: 11px;
+  margin-bottom: 10px;
+  background-color: green;
+  width: 190px;
+  color: white;
+}
 
 input {
   margin: 10px;
