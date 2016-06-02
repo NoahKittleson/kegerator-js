@@ -11,19 +11,21 @@ import { BeerPipe } from './beer.pipe';
   pipes: [BeerPipe],
   directives: [NewKegComponent, KegDisplayComponent],
   template: `
-    <select (change)="onChange($event.target.value)">
-      <option value="all" selected="selected">All</option>
-      <option value="dark">Dark Beers</option>
-      <option value="IPA">IPA</option>
-      <option value="Cider">Cider</option>
-      <option value="Stout">Stout</option>
-    </select>
-    <keg-display *ngFor="#currentKeg of kegList | beerType:filterBeer"
-      (click)="kegClicked(currentKeg)"
-      [class.selected]="currentKeg === selectedKeg"
-      [keg]="currentKeg">
-    </keg-display>
-    <new-keg (onSubmitNewKeg)="addKeg($event)" [keg]="selectedKeg"></new-keg>
+    <nav class="navbar navbar-default">
+      <button class="button-nav" (click)="onChange('dark')">DARK BEERS</button>
+      <button class="button-nav" (click)="onChange('hoppy')">HOPPY BEER</button>
+      <button class="button-nav" (click)="onChange('Cider')">CIDER</button>
+      <button class="button-nav-middle" (click)="onChange('all')">YOUR KEGS</button>
+      <button class="button-nav" (click)="onChange('light')">LIGHT BEER</button>
+      <button class="button-nav" (click)="onChange('Sour')">SOUR BEER</button>
+      <button class="button-nav" (click)="onChange('shit')">SHITTY BEER</button>
+    </nav>
+      <keg-display *ngFor="#currentKeg of kegList | beerType:filterBeer"
+        (click)="kegClicked(currentKeg)"
+        [class.selected]="currentKeg === selectedKeg"
+        [keg]="currentKeg">
+      </keg-display>
+      <new-keg (onSubmitNewKeg)="addKeg($event)" [keg]="selectedKeg"></new-keg>
   `
 })
 export class KegListComponent {

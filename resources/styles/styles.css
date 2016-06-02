@@ -2,24 +2,21 @@ body {
   font-family: 'Cinzel', serif;
   font-weight: 800;
   background: url("/././resources/images/background.png");
-  color:  #005252;
+  color:  #0D184F;
 }
 
-h1, h2, h3 {
-    color: #0D184F;
-}
-
-.selected {
-  color: #0D184F;
+.container-large {
+  align-items: center;
 }
 
 p {
+  text-align: left;
   margin-left: 35px;
   font-size: 16px;
 }
 
 label {
-  font-size: 20px;
+  font-size: 30px;
 }
 
 .fuckin-barrel {
@@ -40,8 +37,12 @@ label {
   height: 100px;
   width: 150px;
   color: white;
-  background-color: green;
+  background-color: #008a00;
   font-size: 18px;
+}
+
+#overwrite:hover {
+  background-color: rgba(0, 138, 0, .8);
 }
 
 #replace {
@@ -64,7 +65,11 @@ input {
 
 #adjust {
   margin-top: 9px;
-  background-color: green;
+  background-color: rgb(0, 138, 0);
+}
+
+#adjust:hover {
+  background-color: rgba(0, 138, 0, .8);
 }
 
 #soccer-kablooie, #skull {
@@ -75,4 +80,40 @@ input {
 }
 .right {
   float: right;
+}
+
+.navbar-default {
+  background: rgba(253, 227, 167, .5);
+  border-color: #22313F;
+  align-items: center;
+  text-align: center;
+}
+
+.button-nav {
+  background-color: #4E342E;
+  color: rgb(253, 227, 167);
+  border-radius: 15px;
+  font-size: 25px;
+  height: 100px;
+  width: 200px;
+  margin: 20px;
+}
+
+.button-nav-middle:hover {
+  background-color: rgba(36, 19, 11, .8);
+}
+
+.button-nav:hover {
+  background: rgba(78, 52, 46, .8);
+}
+
+.button-nav-middle {
+  background-color: #24130B;
+  color: rgb(253, 227, 167);
+  border-radius: 15px;
+  font-size: 40px;
+  height: 120px;
+  width: 300px;
+  margin: 20px;
+
 }

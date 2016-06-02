@@ -7,7 +7,7 @@ import { Keg } from './keg.model';
   inputs: ['keg'],
   directives: [EditKegComponent],
   template: `
-    <div class="container-large left">
+    <div class="container-large">
       <div class="row no-gutter">
         <div class="col-md-1">
           <span *ngIf="kegLeft() === 4"><img src="././resources/images/full.png" class="fuckin-barrel"></span>
@@ -16,12 +16,12 @@ import { Keg } from './keg.model';
           <span *ngIf="kegLeft() === 1"><img src="././resources/images/quarter.png" class="fuckin-barrel"></span>
         </div>
 
-        <div class="col-md-2">
+        <div class="col-md-3">
           <div *ngIf="keg.pints > 0">
-            <label (click) = "toggleShow()">{{ keg.name }} {{ keg.type }} {{ keg.ABV }}</label>
+            <label (click) = "toggleShow()">{{ keg.name }} <br> {{ keg.type }} {{ keg.ABV }}</label>
             <div *ngIf="show === true">
               <p>Pints Left in Keg: {{ keg.pints }}</p>
-              <p>Keg Empty? {{ keg.empty }}</p>
+              <p>Keg is <span *ngIf="!keg.empty">NOT</span> Empty</p>
             </div>
           </div>
           <div *ngIf="keg.pints === 0">

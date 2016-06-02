@@ -7,7 +7,6 @@ import { KegListComponent } from './keg-list.component';
   directives: [KegListComponent],
   template: `
   <div>
-  <h1>Your Kegs</h1>
     <keg-list
       [kegList] = "kegs">
     </keg-list>
@@ -27,6 +26,14 @@ export class AppComponent {
       new Keg("Kraken", "Red", "6.7%", 4),
       new Keg("Hoppy Little Accident", "IPA", "5.3%", 5),
       new Keg("Blood Orange", "Wheat", "4.4%", 6),
+      new Keg("Plum Loco", "Sour", "5.1%", 7),
+      new Keg("Pabst", "Shit", "4%", 8),
+      new Keg("Rainier", "Shit", "4.1%", 9),
+      new Keg("Jagged Little Pils", "Pilsner", "4.8%", 10),
+      new Keg("Chocolate Shake", "Porter", "6.8%", 11),
+      new Keg("El Heffe", "Heffeweizen", "5.5%", 12),
+      new Keg("Arrogant Bastard", "Stout", "8.9%", 13),
+      new Keg("Sleepy Hollow", "Brown", "6.1%", 14)
     ];
   }
 }

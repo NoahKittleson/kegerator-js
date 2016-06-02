@@ -19,6 +19,25 @@ export class BeerPipe implements PipeTransform {
             || keg.type === "Brown";
       });
     }
+    else if(desiredBeerType === "hoppy") {
+      return input.filter((keg) => {
+        return keg.type === "IPA"
+            || keg.type === "Pale Ale";
+      });
+    }
+    else if(desiredBeerType === "light") {
+      return input.filter((keg) => {
+        return keg.type === "Heffeweizen"
+            || keg.type === "Pilsner"
+            || keg.type === "Wheat";
+      });
+    }
+    else if(desiredBeerType === "shit") {
+      return input.filter((keg) => {
+        return keg.name === "Pabst"
+            || keg.name === "Rainier";
+      });
+    }
     return input.filter((keg) => {
       return keg.type === desiredBeerType;
     });
